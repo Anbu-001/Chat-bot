@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+speechrecognition
+wave
+google-generativeai
+python-multipart

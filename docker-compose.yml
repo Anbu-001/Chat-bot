@@ -1,0 +1,25 @@
+version: '3.10'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"  # Ensure this is set
+    volumes:
+      - ./backend:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+
+      - GEMINI_API_KEY=AIzaSyBS9U7j4XOqEjn5o0HDwAIyJ6WAf8ZKdH4  # Use env variable instead of hardcoding in main.py
+
+
+
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
