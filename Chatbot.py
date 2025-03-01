@@ -26,7 +26,7 @@ def listen():
         return ""
 
 def chat_with_gpt(prompt):
-    genai.configure(api_key="AIzaSyBS9U7j4XOqEjn5o0HDwAIyJ6WAf8ZKdH4")
+    genai.configure(api_key="*********************************")
     model = genai.GenerativeModel("gemini-pro")
     response = model.generate_content(f"Respond concisely: {prompt}", stream=False)
     return response.text if hasattr(response, "text") else "I'm not sure, could you clarify?"
